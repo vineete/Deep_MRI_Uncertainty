@@ -12,7 +12,7 @@ In training the model, we use a Knee dataset obtained from patients at Stanford 
 The model architecture is shown below, with the VAE (encoder and decoder layers are comprised of strided and transpose convolutions, respectively) and a data consistency layer (affine projection). When adversarial loss is used, we use a Convnet to serve as the discriminator.
 
 <p align="center">
-  <img src="revised_model_architecture.png" height="240">
+  <img src="model_fig.png" height="240">
 </p>
 
 ## Command to Run From Terminal
