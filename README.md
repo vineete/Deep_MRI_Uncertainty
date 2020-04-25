@@ -1,7 +1,7 @@
 # GAN-Hallucination
 
 ## Background
-Reliable MRI is crucial for accurate interpretation in therapeutic and diagnostic tasks. However, undersampling during MRI acquisition as well as the use of deep learning (DL) methods introduces uncertainty that can lead to incorrect diagnoses and poor patient outcomes. This code allows one to produce realistic and data-consistent MR image reconstructions using a VAE model.
+Reliable MRI is crucial for accurate interpretation in therapeutic and diagnostic tasks. However, undersampling during MRI acquisition as well as the use of deep learning (DL) methods for image recovery introduces uncertainty that can lead to incorrect diagnoses and poor patient outcomes. This code allows one to produce realistic and data-consistent MR image reconstructions using a VAE model and obtain insights about the associated uncertainty.
 
 After training and evaluating the VAE model, its generative capabilities can be harnessed to produce new reconstructions that can be evaluated with a Monte Carlo approach to assess pixel-wise variance or other statistics. Additionally, the trace of the end-to-end network Jacobian is calculated to aid in the computation of Stein's Unbiased Risk Estimator (SURE), which enables the quantification of risk even when the ground truth image is unknown.
 
@@ -19,9 +19,9 @@ The model architecture is shown below, with the VAE (encoder and decoder layers 
 
 python3 srez_main.py 
 --run train 
---dataset_train ../GAN-Hallucination/Data/Knee-highresolution-19cases/train
---dataset_test ../GAN-Hallucination/Data/Knee-highresolution-19cases/test/ 
---sampling_pattern ../GAN-Hallucination/Data/Knee-highresolution-19cases/sampling_pattern/mask_5fold_160_128_knee_vdrad.mat 
+--dataset_train Data/Knee-highresolution-19cases/train
+--dataset_test Data/Knee-highresolution-19cases/test/ 
+--sampling_pattern Data/Knee-highresolution-19cases/sampling_pattern/mask_5fold_160_128_knee_vdrad.mat 
 --sample_size 128 
 --sample_size_y 160 
 --batch_size 4 
